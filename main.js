@@ -2,10 +2,10 @@ let myImage = document.querySelector('img');
 
 myImage.onclick = function() {
     let mySrc = myImage.getAttribute('src');
-    if(mySrc === 'images/荷花元素.png') {
-      myImage.setAttribute('src', 'images/p1.jpg');
+    if(mySrc === '荷花元素.png') {
+      myImage.setAttribute('src', 'p1.jpg');
     } else {
-      myImage.setAttribute('src', 'images/荷花元素.png');
+      myImage.setAttribute('src', '荷花元素.png');
     }
 }
 let myButton = document.querySelector('button');
