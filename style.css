@@ -1,7 +1,53 @@
+/* 把我们所有标签的内外边距清零 */
 * {
     margin: 0;
     padding: 0;
+    /* CSS3盒子模型 */
+    box-sizing: border-box;
 }
+
+/* em 和 i 斜体的文字不倾斜 */
+em,
+i {
+    font-style: normal
+}
+
+/* 去掉li 的小圆点 */
+li {
+    list-style: none
+}
+
+img {
+    /* border 0 照顾低版本浏览器 如果 图片外面包含了链接会有边框的问题 */
+    border: 0;
+    /* 取消图片底侧有空白缝隙的问题 */
+    vertical-align: middle
+}
+
+/* 清除浮动 */
+.clearfix:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: ".";
+    height: 0
+}
+
+.clearfix {
+    *zoom: 1
+}
+
+a {
+    color: #666;
+    text-decoration: none
+}
+
+a:hover {
+    color: #1884df;
+}
+
+/* 以上为base.css */
+
 
 html {
     background-image: url(images/background.png);
@@ -16,6 +62,7 @@ h1 {
     margin: 20px;
 }
 
+/* 导航栏 */
 .navigation {
     width: 100%;
     background: rgb(126, 123, 123);
@@ -37,50 +84,47 @@ h1 {
     text-decoration: none;
 }
 
+/* 主页内容 */
 main {
-    margin-top: 1em;
-    display: grid;
-    grid-template-columns: 5fr 1fr;
-    gap: 30px;
+    width: 1200px;
+    margin: 20px 160px;
 }
 
-.cover img {
-    max-width: 100%;
-    display: block;
+.cover {
+    float: left;
+    background: url(images/reading.jpg);
+    background-size: cover;
+    width: 900px;
+    height: 505px;
+
 }
 
-h2 {
-    text-align: center;
-}
-
+/* 侧边栏 */
 aside {
-    width: auto;
+    float: right;
+    width: 180px;
+    height: 505px;
     border: rgb(78, 78, 78) 1px solid;
 }
 
+aside h2 {
+    text-align: center;
+    padding:20px 0 50px 0;
+   /*  */  
+}
+aside li:nth-child(1){
+    border-top: rgb(78, 78, 78) 1px solid;
+}
 aside li {
-    padding: 1.2rem;
-    list-style-type: none;
     font-size: 1rem;
+    line-height: 80px;
     text-align: center;
-}
-aside h2{
-    margin: 1em;
-}
-aside a {
-    text-decoration: none;
-    text-align: center;
-    margin: 0 auto;
+    border-bottom: rgb(78, 78, 78) 1px solid;
+    height: 80px;
+    margin: 0 40px;
 }
 
-aside a:link {
-    color: black;
-}
-
-aside a:visited {
-    color: darkslateblue;
-}
-
+/* 尾部 */
 footer {
     margin-top: 10px;
     text-align: center;
